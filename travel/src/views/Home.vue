@@ -21,7 +21,12 @@
         />
       </van-grid>
 
-    
+     <!--  产品组件 -->
+     <product v-for='(item,index) in list.product' 
+     :key='index'
+     :datalist='item'
+     ></product>
+ 
   </div>
 </template>
 
@@ -37,8 +42,11 @@ Vue.use(Swipe).use(SwipeItem);
 import { Grid, GridItem } from 'vant';
 Vue.use(Grid).use(GridItem);
 
+import product from '../components/product'
+
 export default {
   components: {
+    product,
   },
   data() {
     return {
@@ -48,7 +56,7 @@ export default {
   created() {
     this.$axios.get('api/v3/m1/homepage?platform=4').then((res)=>{
       this.list=res.data.data
-      console.log(this.list)
+      // console.log(this.list)
     })
    
   }

@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import '../public/css/reset.css'
-// import qs from 'qs'
+
 Vue.use(axios)
 Vue.prototype.$axios=axios
 
